@@ -20,7 +20,7 @@ namespace Riwo.Rimote.SocketCan
                 return CreateSocketNetCore2_x(socketType, safeSocketCloseType, adapterName);
 
             // Workaround for .Net core 3.0+
-            var safeSocketHandleType = socketType.Assembly.GetType("SafeSocketHandle");
+            var safeSocketHandleType = socketType.Assembly.GetType("System.Net.Sockets.SafeSocketHandle");
             if (safeSocketHandleType != null)
                 return CreateSocketNetCore3_x(socketType, safeSocketHandleType, adapterName);
 
